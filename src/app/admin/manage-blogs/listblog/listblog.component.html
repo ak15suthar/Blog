@@ -1,0 +1,24 @@
+<div class="main"  >
+    <table datatable class="row-border hover">
+        <thead>
+          <tr>
+            <th scope="col">Blog ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Date</th>
+            <th scope="col">Image</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let a of addblog">
+            <th scope="row">{{a.bid}}</th>
+            <td>{{a.title}}</td>
+            <td>{{a.date|date:'mediumDate'}}</td>
+            <td><img [src]="['http://localhost:3636/uploads/'+a.image]" style="width: 100px;height: 100px;" class="rounded"></td>
+            <td><a [routerLink]="['/admin/manage-blogs/ediblog',a.bid]"><i class="pi pi-user-edit"></i></a></td>
+            <td><a (click)="delete(a.bid)"><i class="pi pi-trash"></i></a></td>
+          </tr>
+        </tbody>
+      </table>
+</div> 

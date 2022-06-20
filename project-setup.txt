@@ -1,0 +1,130 @@
+Creating all modules
+blogpost
+cmspage
+	admin	
+	ng generate component admin/admin
+	ng generate component admin/admin-dashboard	
+	ng generate component admin/manage-blogs
+	ng generate component admin/manage-categories
+	ng generate component admin/manage-pages
+	
+auth
+ng generate component auth/login
+
+Components, Service and Routing Module
+header
+banner
+footer
+page-not-found
+
+blogpost (module)
+blogpost-featured
+blogpost-list
+blogpost-detail
+blogpost-recent
+categories
+blogpost-service
+blogpost-routing-module
+
+cmspage (module)
+page
+contact-form
+cmspage-service
+cmspage-routing-module
+Note:* Admin components will create later.
+
+
+Creating modules
+
+  ng generate module blogpost --routing
+Copy
+
+  ng generate module cmspage --routing
+Copy
+
+  ng generate module admin --routing
+Copy
+
+  ng generate module auth --routing
+Copy
+Creating components
+
+  ng generate component header
+Copy
+
+  ng generate component footer
+Copy
+
+  ng generate component banner
+Copy
+
+  ng generate component page-not-found
+Copy
+Creating components for blogpost module
+
+  ng generate component blogpost/blogpost-featured
+Copy
+
+  ng generate component blogpost/blogpost-list
+Copy
+
+  ng generate component blogpost/blogpost-detail
+Copy
+
+  ng generate component blogpost/blogpost-recent
+Copy
+
+  ng generate component blogpost/categories
+Copy
+Creating service for Blogpost Module
+
+  ng generate service blogpost/blogpost
+Copy
+Creating components for cmspage module
+
+  ng generate component cmspage/page
+Copy
+
+  ng generate component cmspage/contact-form
+Copy
+Creating service for cmspage module
+
+  ng generate service cmspage/cmspage
+
+Edit app.module.ts
+Import BlogpostModule and CmspageModule in app.module.ts
+
+
+  ....
+  import { BlogpostModule } from './blogpost/blogpost.module';
+  import { CmspageModule } from './cmspage/cmspage.module';
+
+  imports: [
+    ....
+    CmspageModule,
+    AppRoutingModule
+  ],
+Copy
+Edit blogpost/blogpost.module.ts
+Export BlogpostFeaturedComponent component for showing this component on root component app.component.html
+
+
+  imports: [
+    CommonModule,
+    BlogpostRoutingModule
+  ],
+  exports: [
+    BlogpostFeaturedComponent
+  ],
+Copy
+Edit app.component.html
+Edit app.component.html for header, banner, featured blogpost and footer
+
+
+  <div class="container">
+    <app-header></app-header>
+    <app-banner></app-banner>
+    <app-blogpost-featured></app-blogpost-featured>
+    <app-footer></app-footer>
+    <router-outlet></router-outlet>
+  </div>

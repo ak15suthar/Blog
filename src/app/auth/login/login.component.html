@@ -1,0 +1,33 @@
+
+<div class="main">
+<!-- Default form login -->
+<form class="text-center border border-light p-5" [formGroup]="myForm" (ngSubmit)="login()">
+
+  <p class="h4 mb-4">Login</p>
+
+  <!-- Email -->
+  <input type="email"  class="form-control mb-4" placeholder="Username" formControlName="username"> 
+
+  <!-- Password -->
+  <input type="password"  class="form-control mb-4" placeholder="Password" formControlName="password">
+
+  <div class="d-flex justify-content-around">
+    <div>
+      <!-- Forgot password -->
+      <a href="">Forgot password?</a>
+    </div>
+  </div>
+
+  <!-- Sign in button -->
+  <!-- <button mdbBtn color="info" block="true" class="edit" type="submit">Sign in</button> -->
+  <input type="submit" value="LOGIN" class="btn btn-info btn-block my-4 waves-effect waves-light">
+  <!-- Register -->
+  <p>Not a member?
+    <a href="">Register</a>
+  </p>
+
+  <!-- Social login -->
+  
+</form>
+<!-- Default form login -->
+</div>

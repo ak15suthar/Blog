@@ -1,0 +1,20 @@
+<div class="main"  >
+    <table *ngIf="addcategories" datatable class="row-border hover">
+        <thead>
+          <tr>
+            <th scope="col">Category ID</th>
+            <th scope="col">Category Name</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let a of addcategories">
+            <th scope="row">{{a.cid}}</th>
+            <td>{{a.cname}}</td>
+            <td><a [routerLink]="['/editcategories',a.cid]"><i class="pi pi-user-edit"></i></a></td>
+            <td><a (click)="delete(a.cid)"><i class="pi pi-trash"></i></a></td>
+          </tr>
+        </tbody>
+      </table>
+</div> 

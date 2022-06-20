@@ -1,0 +1,42 @@
+<div class="main">
+    <form [formGroup]="myForm" *ngIf="myForm" (ngSubmit)="update()">
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="validationDefault01">Title</label>
+            <input type="text" class="form-control" formControlName="title" id="validationDefault01" required>
+          </div>
+          
+        </div>
+        
+        <div class="form-row">
+            <div class="col-md-6 mb-3">
+                <label for="validationDefault04">Category</label>
+                <select class="custom-select" id="validationDefault04" formControlName="cat_id" required>
+                  <option selected disabled >Choose...</option>
+                  <option *ngFor="let c of category" value="{{c.cid}}">{{c.cname}}</option>
+                </select>
+              </div>  
+        </div>
+      <div class="form-group form-row">
+          <label class="col-md-3">Is Featured</label>
+          <div class="col-md-9">
+          <input type="radio" value="true" formControlName="isfeatured">YES
+          <input type="radio" value="false" formControlName="isfeatured">NO
+        </div>
+      </div>
+      
+      <div class="form-group form-row">
+        <label class="col-md-3">Is Active</label>
+        <div class="col-md-9">
+        <input type="radio" value="true" formControlName="isactive">YES
+        <input type="radio" value="false" formControlName="isactive">NO
+      </div>
+    </div>
+      
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Description</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" formControlName="description" style="width: 360px;" rows="3"></textarea>
+    </div>
+        <button class="btn" style="color: white; background-color: #528bba" type="submit">Submit form</button>
+    </form>
+    </div>
